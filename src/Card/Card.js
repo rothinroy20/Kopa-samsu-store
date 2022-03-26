@@ -1,9 +1,12 @@
 import React from 'react';
 import "./Card.css";
 
-const Card = ({ gunData }) => {
-    const { name, img, bullet, capacity, action, price } = gunData;
+const Card = ({ gunData, handleAddToCart }) => {
+    const { name, img, bullet, capacity, action, price, id } = gunData;
+
     console.log(gunData);
+
+
     return (
         <div className='card'>
             <div className='image-container'>
@@ -14,7 +17,7 @@ const Card = ({ gunData }) => {
             <p>Capacity: {capacity}</p>
             <p>Action: {action}</p>
             <div className='add-to-cart'>
-                <button>Add to Card</button>
+                <button onClick={() => handleAddToCart(id)}>Add to Card</button>
                 <h1>$ {price}</h1>
             </div>
         </div>

@@ -4,8 +4,15 @@ import Card from './Card/Card';
 import Navbar from './Navbar/Navbar';
 import { useEffect, useState } from 'react';
 
+
 function App() {
   const [guns, setGuns] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (id) => {
+    console.log('id');
+  };
+
   console.log(guns);
 
   useEffect(() => {
@@ -19,7 +26,7 @@ function App() {
       <Navbar></Navbar>
       <div className='gun-container'>
         {guns.map((gun) => (
-          <Card key={guns.id} gunData={guns} />
+          <Card key={guns.id} gunData={guns} handleAddToCart={handleAddToCart} />
         ))}
       </div>
 
