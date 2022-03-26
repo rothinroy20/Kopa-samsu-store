@@ -1,10 +1,11 @@
 import React from 'react';
 import "./Navbar.css";
+
 const Navbar = () => {
     return (
-        <div>
-            <h2>kopa sumsu store</h2>
-        </div>
+        <nav className='navbar'>
+            <h1>kopa sumsu store</h1>
+        </nav>
     );
 };
 
