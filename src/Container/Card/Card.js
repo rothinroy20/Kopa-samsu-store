@@ -4,7 +4,7 @@ import "./Card.css";
 const Card = ({ gunData, handleAddToCart }) => {
     const { name, img, bullet, capacity, action, price, id } = gunData;
 
-    console.log(gunData);
+    // console.log(gunData);
 
 
     return (
