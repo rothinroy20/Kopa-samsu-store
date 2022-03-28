@@ -5,12 +5,19 @@ import './Shope.css'
 
 const Shope = () => {
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [products])
+
+    const handleAddToCart = (product) => {
+        console.log(product);
+        // cart.push(product);
+        const newCart = [...cart, product]
+    }
 
     return (
         <div className='shope-container'>
@@ -19,6 +26,7 @@ const Shope = () => {
                     products?.map(product => <Product
                         key={product.id}
                         product={product}
+                        handleAddToCart={handleAddToCart}
                     ></Product>)
                 }
             </div>
